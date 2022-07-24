@@ -2,31 +2,25 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Linear Equation Resolver");
+        System.out.println("Given a equation 'a * x + b = c', please enter constants:");
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter a month:");
-        int month = scanner.nextInt();
-        switch (month) {
-            case 2:
-                System.out.println("This month has 28 or 29 days.");
-                break;
-            case 1:
-            case 3:
-            case 5:
-            case 7:
-            case 8:
-            case 10:
-            case 12:
-                System.out.println("This month has 31 days.");
-                break;
-            case 4:
-            case 6:
-            case 9:
-            case 11:
-                System.out.println("This month has 30 days.");
-                break;
-            default:
-                System.out.println("This month doesn't exist.");
+        System.out.println("Enter a: ");
+        double a = scanner.nextDouble();
+        System.out.println("Enter b: ");
+        double b = scanner.nextDouble();
+        System.out.println("Enter c: ");
+        double c = scanner.nextDouble();
 
+        if (a != 0) {
+            double x = (c - b) / a;
+            System.out.println("Equation pass with x = " + x);
+        } else {
+            if (b == 0) {
+                System.out.println("The solution is all x!");
+            } else {
+                System.out.println("No solution!");
+            }
         }
     }
 }
